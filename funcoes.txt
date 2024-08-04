@@ -12,7 +12,7 @@ Opções de Visualização:
 Exibir itens em ordem alfabética, por categoria, ou por quantidade.
 Filtros:
 Filtrar por categoria.
-Filtrar por status (comprado/não comprado).
+Filtrar por status (comprado/não comprado). ✅
 
 Editar Item
 Descrição:Permite ao usuário atualizar as informações de um item existente na lista de compras.
@@ -20,14 +20,15 @@ Campos Editáveis:
 Nome do Item.
 Quantidade.
 Categoria.
-Validação:Todos os campos editados devem seguir as mesmas regras de validação da criação de itens.
+Validação:Todos os campos editados devem seguir as mesmas regras de validação da criação de itens. ✅
 
 Remover Item
 Descrição:Permite ao usuário excluir um item da lista de compras.
-Confirmação:O sistema deve pedir confirmação antes de remover o item.
+Confirmação:O sistema deve pedir confirmação antes de remover o item. ✅ 
+
 Marcar Item como Comprado ou Não Comprado
 Descrição:Permite ao usuário alterar o status de um item (comprado ou não comprado).
-Visualização:Itens comprados devem ser exibidos de forma diferente (ex.: com um ícone de check ou uma cor diferente).
+Visualização:Itens comprados devem ser exibidos de forma diferente (ex.: com um ícone de check ou uma cor diferente). ✅
 
 Resumo da Lista de Compras
 Descrição:Exibe um resumo dos itens na lista de compras.
