@@ -3,6 +3,7 @@ import { listarItens } from "./functions/listarItens";
 import { editarItem } from "./functions/editarItem";
 import { removeItem } from "./functions/removeItem";
 import { situation } from "./functions/situation";
+import { resumoLista } from "./functions/resumoLista"
 
 const menu = `
 MENU - LISTA DE COMPRAS
@@ -18,6 +19,11 @@ let listaDeCompra = [
     {
         nome: "Abacaxi",
         quantidade: 2,
+        categoria: "Fruta",
+        status: "comprado ✅"
+    },{
+        nome: "Espinafre",
+        quantidade: 9,
         categoria: "Fruta",
         status: "comprado ✅"
     },{
@@ -49,6 +55,7 @@ while(i) {
             situation(listaDeCompra)
             break;
         case 6:
+            resumoLista(listaDeCompra)
             break;
         case 0:
             console.log("Obrigado pela preferência! Até logo!");
