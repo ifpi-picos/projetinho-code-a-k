@@ -1,6 +1,7 @@
 import { validar } from "./validar"
+import { adicionaItem } from "../bancoDeDados/pegarArquivo"
 
-export const adicionaItem = (lista) => {
+export async function addItem() {
     const nomeItem = prompt("Nome do Item:")
     const quantidade = Number(prompt("Quantidade:"))
     const categoria = prompt("Categoria:")
@@ -14,7 +15,7 @@ export const adicionaItem = (lista) => {
             categoria: categoria,
             status: "não comprado ❌"
         }
-        lista.push(obj)
+        await adicionaItem(obj)
         console.log("Item adicionado com sucesso!");
     }       
 }

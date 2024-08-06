@@ -15,7 +15,7 @@ function itensPorCategoria(lista) {
     let listaCategoria = {}
     lista.forEach(item => {
         if (listaCategoria[item.categoria]) {
-            listaCategoria[item.categoria]++;
+            listaCategoria[item.categoria]++
         } else {
             listaCategoria[item.categoria] = 1;
         }
