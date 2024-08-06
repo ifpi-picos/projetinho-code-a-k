@@ -7,7 +7,7 @@ export async function addItem() {
     const categoria = prompt("Categoria:")
 
     if (validar(nomeItem, quantidade, categoria) == false) {
-        console.log("Algum campo está vazio ou inválido, tente novamente preenchendo todos os campos.");
+        console.log("\nAlgum campo está vazio ou inválido, tente novamente preenchendo todos os campos.\n");
     } else {
         const obj = {
             nome: nomeItem,
@@ -16,6 +16,6 @@ export async function addItem() {
             status: "não comprado ❌"
         }
         await adicionaItem(obj)
-        console.log("Item adicionado com sucesso!");
+        console.log("\nItem adicionado com sucesso!");
     }       
 }

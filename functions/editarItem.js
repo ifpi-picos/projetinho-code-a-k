@@ -1,9 +1,12 @@
+import { listaDeCompra } from "../bancoDeDados/pegarArquivo";
+import { FILE_NAME } from "../listaDeCompras";
 import { validar } from "./validar"
 
-export const editarItem = (lista) => {
+export async function editarItem () {
+    let lista = await listaDeCompra()
     console.log(lista);
     console.log("");
-    const nome = prompt("Digite o nome do item: ").toLowerCase()
+    const nome = prompt("\nDigite o nome do item: ").toLowerCase()
     const i = lista.findIndex(elemento => {
         return (elemento.nome).toLowerCase() === nome
     })
@@ -14,7 +17,7 @@ export const editarItem = (lista) => {
         const categoria = prompt("Digite a nova categoria do item: ")
 
         if(validar(nomeItem, quantidade, categoria) == false) {
-            console.log("Algum campo está vazio ou inválido, tente novamente preenchendo todos os campos.");
+            console.log("\nAlgum campo está vazio ou inválido, tente novamente preenchendo todos os campos.");
 
         } else {
             const obj = {
@@ -24,8 +27,9 @@ export const editarItem = (lista) => {
                 status: "não comprado ❌"
             }
             lista[i] = obj
+            await Bun.write(FILE_NAME, JSON.stringify(lista))
         }
     } else {
-        console.log("Item não encontrado.");
+        console.log("\nItem não encontrado.");
     }
 }

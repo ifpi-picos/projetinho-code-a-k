@@ -1,6 +1,9 @@
+import { listaDeCompra } from "../bancoDeDados/pegarArquivo";
+import { FILE_NAME } from "../listaDeCompras";
 import { exibir } from "./exibir";
 
-export const situation = (lista) => {
+export async function situation() {
+    let lista = await listaDeCompra()
     exibir(lista);
     const nome = prompt("Digite o nome do item: ").toLowerCase()
     const i = lista.findIndex(elemento => {
@@ -12,11 +15,13 @@ export const situation = (lista) => {
         switch(op) {
             case 1:
                 lista[i].status = "comprado ✅"
-                console.log("Item marcado como comprado.")
+                console.log("\nItem marcado como comprado.")
+                await Bun.write(FILE_NAME, JSON.stringify(lista))
                 break
             case 2:
                 lista[i].status = "não comprado ❌"
-                console.log("Item marcado como não comprado.")
+                console.log("\nItem marcado como não comprado.")
+                await Bun.write(FILE_NAME, JSON.stringify(lista))
                 break
             default:
                 console.log("Opção inválida.")

@@ -32,22 +32,22 @@ while(i) {
             listarItens(await listaDeCompra())
             break;
         case 3:
-            editarItem(listaDeCompra)
+            await editarItem()
             break;
         case 4:
-            removeItem(listaDeCompra)
+            await removeItem()
             break;
         case 5:
-            situation(listaDeCompra)
+            await situation()
             break;
         case 6:
-            resumoLista(listaDeCompra)
+            resumoLista(await listaDeCompra())
             break;
         case 0:
-            console.log("Obrigado pela preferência! Até logo!");
+            console.log("\nObrigado pela preferência! Até logo!\n");
             i = false;
             break;
         default:
-            console.log("Opção Inválida!! Escolha uma opção existente.");
+            console.log("\nOpção Inválida!! Escolha uma opção existente.\n");
     }
 }

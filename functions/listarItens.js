@@ -17,7 +17,7 @@ export const listarItens = (lista) => {
                 console.table(lista);
                 break;
             default:
-                console.log("Opção inválida.");
+                console.log("\nOpção inválida.");
                 return;
         }
     }
