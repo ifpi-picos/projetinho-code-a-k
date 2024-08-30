@@ -9,8 +9,9 @@ export const listarItens = (lista) => {
                 console.table(lista);
                 break;
             case 2:
-                lista.sort((a, b) => a.categoria.localeCompare(b.categoria));
-                console.table(lista);
+                const categoria = prompt("Digite a categoria do item: ").toLowerCase();
+                const produtosFiltrados = lista.filter(item => item.categoria.toLowerCase() === categoria);
+                console.table(produtosFiltrados);
                 break;
             case 3:
                 lista.sort((a, b) => a.quantidade - b.quantidade);
